@@ -1,0 +1,63 @@
+server:
+    port: 8080
+
+spring:
+    profiles: dev
+    
+    datasource:
+        dataSourceClassName: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+        url: jdbc:mysql://localhost:3306/cobranza
+        databaseName: 
+        serverName: 
+        username: root
+        password:
+
+    jpa:
+        database-platform: org.hibernate.dialect.MySQLInnoDBDialect
+        database: MYSQL
+        openInView: false
+        show_sql: true
+        generate-ddl: false
+        hibernate:
+            ddl-auto: none
+            naming-strategy: org.hibernate.cfg.EJB3NamingStrategy
+        properties:
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: true
+
+    mail:
+        baseUrl: http://localhost:8080
+
+    thymeleaf:
+        mode: XHTML
+        cache: false
+
+metrics:
+    jmx.enabled: true
+    graphite:
+        enabled: false
+        host: localhost
+        port: 2003
+
+cache:
+    timeToLiveSeconds: 3600
+    hazelcast:
+        debug: true
+        stickySession: false
+        backupCount: 1
+
+# You can add as many as folders to watch
+# You just need to add a dash + the directory to watch
+hotReload:
+    enabled: true
+    package:
+      project: cl.acaya.cobranza
+      domain: cl.acaya.cobranza.domain
+      restdto: cl.acaya.cobranza.web.rest.dto
+    liquibase:
+      defaultCatalogName: cobranza
+      defaultSchema: cobranza
+      excludeTables: 
+    watchdir:
+      - target/classes

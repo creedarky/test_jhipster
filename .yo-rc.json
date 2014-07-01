@@ -1,0 +1,18 @@
+{
+  "generator-jhipster": {
+    "baseName": "cobranza",
+    "packageName": "cl.acaya.cobranza",
+    "packageFolder": "cl/acaya/cobranza",
+    "authenticationType": "cookie",
+    "hibernateCache": "no",
+    "clusteredHttpSession": "hazelcast",
+    "websocket": "no",
+    "databaseType": "sql",
+    "devDatabaseType": "mysql",
+    "prodDatabaseType": "mysql",
+    "useCompass": false,
+    "buildTool": "maven",
+    "frontendBuilder": "grunt",
+    "javaVersion": "7"
+  }
+}
